@@ -151,7 +151,7 @@ static inline void interpolateLinear( float x, float* coeffs )
 
 static inline void interpolateCubic( float x, float* coeffs )
 {
-    const float A = -0.75f;
+    const float A = -0.50f;
 
     coeffs[0] = ((A*(x + 1) - 5*A)*(x + 1) + 8*A)*(x + 1) - 4*A;
     coeffs[1] = ((A + 2)*x - (A + 3))*x*x + 1;
