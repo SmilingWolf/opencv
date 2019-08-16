@@ -366,6 +366,7 @@ CV__DNN_INLINE_NS_BEGIN
          */
         std::vector<std::vector<Range> > sliceRanges;
         int axis;
+        int num_split;
 
         static Ptr<SliceLayer> create(const LayerParams &params);
     };
@@ -492,10 +493,7 @@ CV__DNN_INLINE_NS_BEGIN
     class CV_EXPORTS CropLayer : public Layer
     {
     public:
-        int startAxis;
-        std::vector<int> offset;
-
-        static Ptr<CropLayer> create(const LayerParams &params);
+        static Ptr<Layer> create(const LayerParams &params);
     };
 
     class CV_EXPORTS EltwiseLayer : public Layer

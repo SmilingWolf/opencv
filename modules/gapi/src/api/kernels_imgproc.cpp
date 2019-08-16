@@ -7,10 +7,10 @@
 
 #include "precomp.hpp"
 
-#include "opencv2/gapi/gscalar.hpp"
-#include "opencv2/gapi/gcall.hpp"
-#include "opencv2/gapi/gkernel.hpp"
-#include "opencv2/gapi/imgproc.hpp"
+#include <opencv2/gapi/gscalar.hpp>
+#include <opencv2/gapi/gcall.hpp>
+#include <opencv2/gapi/gkernel.hpp>
+#include <opencv2/gapi/imgproc.hpp>
 
 namespace cv { namespace gapi {
 
@@ -167,6 +167,16 @@ GMat RGB2HSV(const GMat& src) {
 
 GMat RGB2YUV422(const GMat& src) {
     return imgproc::GRGB2YUV422::on(src);
+}
+
+GMatP NV12toRGBp(const GMat &y, const GMat &uv)
+{
+    return imgproc::GNV12toRGBp::on(y, uv);
+}
+
+GMatP NV12toBGRp(const GMat &y, const GMat &uv)
+{
+    return imgproc::GNV12toBGRp::on(y, uv);
 }
 
 } //namespace gapi
